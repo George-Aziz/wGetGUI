@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="GroupX_wGet_19765453.jnlp">
+  <information>
+    <title>GroupX_wGet_19765453</title>
+    <vendor>Georg</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="GroupX_wGet_19765453.jar" size="18672" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="groupx_wget_19765453.GroupX_wGet_19765453"  name="GroupX_wGet_19765453" />
+  <update check="always"/>
+</jnlp>

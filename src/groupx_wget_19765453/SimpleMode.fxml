@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupx_wget_19765453.SimpleModeController">
+    <stylesheets>
+        <URL value="@wGetGUI.css" />
+    </stylesheets>
+    <children>
+      <ImageView fx:id="saveIcon" fitHeight="27.0" fitWidth="31.0" layoutX="1310.0" layoutY="678.0" onMouseClicked="#handleSaveIcon" pickOnBounds="true" preserveRatio="true" styleClass="saveIcon">
+         <image>
+            <Image url="@../../Images/SaveIcon.png" />
+         </image>
+      </ImageView>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <Text layoutX="72.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="wGet Options" AnchorPane.leftAnchor="72.0">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Text>
+      <Text fill="#c6c6c6" layoutX="75.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings for when wGet starts to download the provided URL" wrappingWidth="1001.173828125" AnchorPane.leftAnchor="75.0">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <Text layoutX="72.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Behaviour" AnchorPane.leftAnchor="72.0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="72.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Download" AnchorPane.leftAnchor="72.0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="72.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Post-Download" AnchorPane.leftAnchor="72.0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="72.0" layoutY="600.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saving" AnchorPane.leftAnchor="72.0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="72.0" layoutY="700.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Save File Name:" AnchorPane.leftAnchor="72.0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Line endX="1212.0" layoutX="192.0" layoutY="332.0" scaleY="0.5" startX="-115.16666412353516" AnchorPane.leftAnchor="76.33333587646484">
+         <rotationAxis>
+            <Point3D />
+         </rotationAxis>
+      </Line>
+      <Line endX="1212.0" layoutX="192.0" layoutY="432.0" scaleY="0.5" startX="-115.16666412353516" />
+      <Line endX="1212.0" layoutX="192.0" layoutY="532.0" scaleY="0.5" startX="-115.16666412353516" />
+      <Line endX="1212.0" layoutX="192.0" layoutY="632.0" scaleY="0.5" startX="-115.16666412353516" />
+      <RadioButton fx:id="behBtn1" layoutX="260.0" layoutY="277.0" mnemonicParsing="false" prefWidth="200.0" text="Polite">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="Change the behaviour of wGet to be polite when downloading the website" />
+         </tooltip>
+      </RadioButton>
+      <RadioButton fx:id="behBtn2" layoutX="500.0" layoutY="277.0" mnemonicParsing="false" text="Agressive">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="Change the behaviour of wGet to be Aggressive when downloading the website" />
+         </tooltip>
+      </RadioButton>
+      <RadioButton fx:id="downloadBtn1" layoutX="260.0" layoutY="378.0" mnemonicParsing="false" prefWidth="200.0" text="Single Page">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="When wGet downloads the specified URL, it will download just the single page of the URL with just text" />
+         </tooltip>
+      </RadioButton>
+      <RadioButton fx:id="downloadBtn2" layoutX="500.0" layoutY="358.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" text="Single page with multimedia (images, videos, etc.)" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="When wGet downloads the specified URL, it will download just the single page of the URL with text and multimedia" />
+         </tooltip>
+      </RadioButton>
+      <RadioButton fx:id="downloadBtn3" layoutX="860.0" layoutY="356.0" maxHeight="70.0" maxWidth="338.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="240.0" text="All pages under the single page" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="When wGet downloads the specified URL, it will download any sub-pages underneath the specified URL" />
+         </tooltip>
+      </RadioButton>
+      <RadioButton fx:id="downloadBtn4" layoutX="1125.0" layoutY="354.0" maxHeight="70.0" maxWidth="338.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="240.0" text="All pages on server" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="When wGet downloads the specified URL, it will download every page linked to the URL" />
+         </tooltip>
+      </RadioButton>
+      <RadioButton fx:id="postDownloadBtn1" layoutX="260.0" layoutY="458.0" mnemonicParsing="false" prefWidth="200.0" text="Convert files for offline browsing" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="After wGet downloads the website, it will convert all the files for offline browsing" />
+         </tooltip>
+      </RadioButton>
+      <RadioButton fx:id="postDownloadBtn2" layoutX="500.0" layoutY="456.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" text="Convert files for offline browsing with original backup" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="After wGet downloads the website, it will convert all the files for offline browsing but will also keep the original online version files" />
+         </tooltip>
+      </RadioButton>
+      <RadioButton fx:id="postDownloadBtn3" layoutX="860.0" layoutY="454.0" maxHeight="70.0" maxWidth="338.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="240.0" text="Don't convert files" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="After wGet downloads the website, it will not convert any files for offline browsing and stay with original online files" />
+         </tooltip>
+      </RadioButton>
+      <RadioButton fx:id="savingBtn1" layoutX="260.0" layoutY="561.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="214.0" text="Newer than existing files on disk" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="wGet will only download files that are newer than the existing ones on disk" />
+         </tooltip>
+      </RadioButton>
+      <RadioButton fx:id="savingBtn2" layoutX="500.0" layoutY="553.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" text="Skip all existing files" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="wGet will only download files that don't exist on disk already" />
+         </tooltip>
+      </RadioButton>
+      <RadioButton fx:id="savingBtn3" layoutX="860.0" layoutY="551.0" maxHeight="70.0" maxWidth="338.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="240.0" text="Overwrite files" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="wGet will overwrite all existing wGet files" />
+         </tooltip>
+      </RadioButton>
+      <TextField layoutX="260.0" layoutY="676.0" prefHeight="30.0" prefWidth="407.0" promptText="File Name">
+         <tooltip>
+            <Tooltip text="Input here the file name of the downloaded website" />
+         </tooltip></TextField>
+      <Text layoutX="725.0" layoutY="698.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Save File Location: ">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="directoryPath" layoutX="948.0" layoutY="676.0" prefHeight="30.0" prefWidth="355.0" promptText="Directory Path">
+         <tooltip>
+            <Tooltip text="Input here file location where wGet will download the files into" />
+         </tooltip></TextField>
+      <AnchorPane layoutY="816.0" prefHeight="80.0" prefWidth="1358.0">
+         <children>
+            <TextField layoutX="225.0" layoutY="20.0" prefHeight="50.0" prefWidth="958.0" promptText="URL">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="Input the URL of the website you want to download with wGet" />
+               </tooltip>
+            </TextField>
+            <Button layoutX="1215.0" layoutY="20.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="162.0" text="Download" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="Starts the wGet command with the selected options on screen" />
+               </tooltip>
+            </Button>
+            <Text layoutX="15.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="URL To Download:">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Separator prefHeight="9.0" prefWidth="1400.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="topMenu" layoutX="1.0" layoutY="10.0" prefHeight="53.0" prefWidth="1400.0" styleClass="topMenu">
+         <children>
+            <Button fx:id="simpleBtn" layoutX="1.0" onAction="#handleSimpleBtn" prefHeight="48.0" prefWidth="466.0" text="SIMPLE MODE" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="Most simple wGet commands" />
+               </tooltip>
+            </Button>
+            <Button fx:id="stdBtn" layoutX="467.0" onAction="#handleStdBtn" prefHeight="48.0" prefWidth="466.0" text="STANDARD MODE" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="For slightly advanced users, Standard mode provides a number of options" />
+               </tooltip>
+            </Button>
+            <Button fx:id="batBtn" layoutX="933.0" onAction="#handleBatBtn" prefHeight="48.0" prefWidth="466.0" text="DIRECT .BAT ACCESS MODE" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="For advanced users, directly access wGetStart.bat file and enter options manually" />
+               </tooltip>
+            </Button>
+            <Separator layoutY="50.0" prefHeight="9.0" prefWidth="1400.0" scaleY="2.0" />
+            <Line endX="466.0" layoutY="52.0" scaleY="2.0" stroke="#074ee8" style="-fx-fill: #074EE8;" />
+            <Line endX="932.0" layoutY="52.0" scaleY="2.0" startX="466.0" stroke="#074ee8" style="-fx-fill: #074EE8;" visible="false" />
+            <Line endX="1398.0" layoutY="52.0" scaleY="2.0" startX="932.0" stroke="#074ee8" style="-fx-fill: #074EE8;" visible="false" />
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

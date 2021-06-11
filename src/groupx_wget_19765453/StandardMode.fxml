@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" style="-fx-background-color: #FFFFFF;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupx_wget_19765453.StandardModeController">
+    <stylesheets>
+        <URL value="@wGetGUI.css" />
+    </stylesheets>
+   <AnchorPane fx:id="topMenu" layoutX="1.0" layoutY="10.0" prefHeight="53.0" prefWidth="1400.0" styleClass="topMenu">
+      <children>
+         <Button fx:id="simpleBtn" layoutX="1.0" onAction="#handleSimpleBtn" prefHeight="48.0" prefWidth="466.0" text="SIMPLE MODE" AnchorPane.topAnchor="0.0">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Most simple wGet commands" />
+            </tooltip>
+         </Button>
+         <Button fx:id="stdBtn" layoutX="467.0" onAction="#handleStdBtn" prefHeight="48.0" prefWidth="466.0" text="STANDARD MODE" AnchorPane.topAnchor="0.0">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="For slightly advanced users, Standard mode provides a number of options" />
+            </tooltip>
+         </Button>
+         <Button fx:id="batBtn" layoutX="933.0" onAction="#handleBatBtn" prefHeight="48.0" prefWidth="466.0" text="DIRECT .BAT ACCESS MODE" AnchorPane.topAnchor="0.0">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="For advanced users, directly access wGetStart.bat file and enter options manually" />
+            </tooltip>
+         </Button>
+         <Separator layoutY="50.0" prefHeight="9.0" prefWidth="1400.0" scaleY="2.0" />
+         <Line endX="466.0" layoutY="52.0" scaleY="2.0" stroke="#074ee8" style="-fx-fill: #074EE8;" visible="false" />
+         <Line endX="932.0" layoutY="52.0" scaleY="2.0" startX="466.0" stroke="#074ee8" style="-fx-fill: #074EE8;" />
+         <Line endX="1398.0" layoutY="52.0" scaleY="2.0" startX="932.0" stroke="#074ee8" style="-fx-fill: #074EE8;" visible="false" />
+      </children>
+   </AnchorPane>
+   <AnchorPane layoutY="65.0" prefHeight="753.0" prefWidth="350.0" styleClass="sideMenu" stylesheets="@wGetGUI.css">
+      <children>
+         <Button fx:id="hostBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleSideMenu" prefHeight="75.0" prefWidth="342.0" text="Host Settings">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <graphic>
+               <ImageView fx:id="hostImg" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../Images/HostIcon%20-%20Active.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <tooltip>
+               <Tooltip text="Host Settings page to include or exclude certain domains" />
+            </tooltip>
+         </Button>
+         <Button fx:id="fileBtn" alignment="BASELINE_LEFT" layoutY="75.0" mnemonicParsing="false" onAction="#handleSideMenu" prefHeight="75.0" prefWidth="342.0" text="File Formats">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <graphic>
+               <ImageView fx:id="fileImg" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../Images/FileIcon%20-%20Inactive.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <tooltip>
+               <Tooltip text="File Formats settings to include any specific file formats to wGet download" />
+            </tooltip>
+         </Button>
+         <Button fx:id="behBtn" alignment="BASELINE_LEFT" layoutY="150.0" mnemonicParsing="false" onAction="#handleSideMenu" prefHeight="75.0" prefWidth="342.0" text="Behaviour">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <graphic>
+               <ImageView fx:id="behImg" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../Images/DownloadIcon%20-%20Inactive.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <tooltip>
+               <Tooltip text="Behaviour settings page that will determine how wGet works" />
+            </tooltip>
+         </Button>
+         <Button fx:id="runBtn" alignment="BASELINE_LEFT" layoutY="225.0" mnemonicParsing="false" onAction="#handleSideMenu" prefHeight="75.0" prefWidth="342.0" text="Running &amp; Logging">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <graphic>
+               <ImageView fx:id="runImg" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../Images/RunIcon%20-%20Inactive.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <tooltip>
+               <Tooltip text="Running &amp; Logging settings page to determine what is to be logged and how will wGet run" />
+            </tooltip>
+         </Button>
+         <Button fx:id="retBtn" alignment="BASELINE_LEFT" layoutY="300.0" mnemonicParsing="false" onAction="#handleSideMenu" prefHeight="75.0" prefWidth="342.0" text="Retrieval Options">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <graphic>
+               <ImageView fx:id="retImg" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../Images/RetrievalIcon%20-%20Inactive.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <tooltip>
+               <Tooltip text="Retrieval options setting page to determine additional wGet downloading settings" />
+            </tooltip>
+         </Button>
+         <Separator layoutX="342.0" orientation="VERTICAL" prefHeight="753.0" prefWidth="0.0" />
+         <Line fx:id="hostLine" endY="75.0" stroke="#074ee8" strokeWidth="6.0" />
+         <Line fx:id="fileLine" endY="150.0" startY="75.0" stroke="#074ee8" strokeWidth="6.0" visible="false" />
+         <Line fx:id="behLine" endY="225.0" startY="150.0" stroke="#074ee8" strokeWidth="6.0" visible="false" />
+         <Line fx:id="runLine" endY="300.0" startY="225.0" stroke="#074ee8" strokeWidth="6.0" visible="false" />
+         <Line fx:id="retLine" endY="375.0" startY="300.0" stroke="#074ee8" strokeWidth="6.0" visible="false" />
+      </children>
+   </AnchorPane>
+   <AnchorPane layoutX="3.0" layoutY="816.0" prefHeight="80.0" prefWidth="1325.0">
+      <children>
+         <TextField layoutX="225.0" layoutY="20.0" prefHeight="50.0" prefWidth="958.0" text="URL">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Input the URL of the website you want to download with wGet" />
+            </tooltip>
+         </TextField>
+         <Button layoutX="1215.0" layoutY="20.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="162.0" text="Download" textAlignment="CENTER">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Starts the wGet command with the selected options on screen" />
+            </tooltip>
+         </Button>
+         <Text layoutX="15.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="URL To Download:">
+            <font>
+               <Font size="22.0" />
+            </font>
+         </Text>
+         <Separator prefHeight="9.0" prefWidth="1400.0" />
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="hostPane" layoutX="350.0" layoutY="69.0" prefHeight="743.0" prefWidth="1043.0">
+      <children>
+         <Text layoutX="35.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Host Settings">
+            <font>
+               <Font name="System Bold" size="34.0" />
+            </font>
+         </Text>
+         <Text fill="#c6c6c6" layoutX="35.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="wGet refuses to visit host different than the one you specified by default. The options below are to include/exclude additional domains" wrappingWidth="905.173828125">
+            <font>
+               <Font size="26.0" />
+            </font>
+         </Text>
+         <CheckBox layoutX="35.0" layoutY="214.0" mnemonicParsing="false" text="Download Every Single Linked Domain">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Downloads any domains that is linked with the specific URL" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox layoutX="35.0" layoutY="330.0" mnemonicParsing="false" text="Domains You Want to Add To Main URL">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Click this checkbox to include any specific domains that are linked to the URL" />
+            </tooltip>
+         </CheckBox>
+         <TextField fx:id="includeBox" alignment="TOP_LEFT" layoutX="35.0" layoutY="388.0" prefHeight="80.0" prefWidth="673.0" promptText="www.google.com, www.facebook.com">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Input here all of domains that you want to include" />
+            </tooltip></TextField>
+         <Button fx:id="clearBtnIn" layoutX="730.0" layoutY="406.0" mnemonicParsing="false" onAction="#handleClearInBtn" text="Clear">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Clears textbox to the left" />
+            </tooltip>
+         </Button>
+         <CheckBox layoutX="35.0" layoutY="519.0" mnemonicParsing="false" text="Domains You Want to Remove From Main URL">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Click this checkbox to exclude any specific domains that are linked to the URL" />
+            </tooltip>
+         </CheckBox>
+         <TextField fx:id="excludeBox" alignment="TOP_LEFT" layoutX="35.0" layoutY="562.0" prefHeight="80.0" prefWidth="673.0" promptText="www.facebook.com, www.twitter.com">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Input here all of domains that you want to exclude" />
+            </tooltip></TextField>
+         <Button fx:id="clearBtnEx" layoutX="730.0" layoutY="580.0" mnemonicParsing="false" onAction="#handleClearExBtn" text="Clear">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Clears textbox to the left" />
+            </tooltip>
+         </Button>
+      </children></AnchorPane>
+   <AnchorPane fx:id="filePane" layoutX="350.0" layoutY="69.0" prefHeight="743.0" prefWidth="1043.0" visible="false">
+      <children>
+         <Text layoutX="35.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="File Formats">
+            <font>
+               <Font name="System Bold" size="34.0" />
+            </font>
+         </Text>
+         <Text fill="#c6c6c6" layoutX="35.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select which file formats you would like to download from the URL" wrappingWidth="905.173828125">
+            <font>
+               <Font size="26.0" />
+            </font>
+         </Text>
+         <CheckBox fx:id="selectAllCheck" layoutX="35.0" layoutY="214.0" mnemonicParsing="false" onAction="#handleSelectAll" text="SELECT ALL">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Selects all options on current screen" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox fx:id="htmlCheck" layoutX="35.0" layoutY="314.0" mnemonicParsing="false" text="HTM(L)">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Selecting this will include HTM(L) files" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox fx:id="gifCheck" layoutX="35.0" layoutY="414.0" mnemonicParsing="false" text="GIF">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Selecting this will include GIF files" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox fx:id="zipCheck" layoutX="275.0" layoutY="314.0" mnemonicParsing="false" text="ZIP">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Selecting this will include ZIP files" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox fx:id="txtCheck" layoutX="275.0" layoutY="414.0" mnemonicParsing="false" text="TXT">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Selecting this will include TXT files" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox fx:id="exeCheck" layoutX="515.0" layoutY="314.0" mnemonicParsing="false" text="EXE">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Selecting this will include EXE files" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox fx:id="docCheck" layoutX="515.0" layoutY="414.0" mnemonicParsing="false" text="DOC">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Selecting this will include DOC files" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox fx:id="jpgCheck" layoutX="755.0" layoutY="314.0" mnemonicParsing="false" text="JPG">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Selecting this will include JPG files" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox fx:id="otherCheck" graphicTextGap="5.0" layoutX="755.0" layoutY="381.0" mnemonicParsing="false">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <graphic>
+               <TextArea prefHeight="93.0" prefWidth="175.0" promptText="Other (MP3, MP4)" translateX="10.0" translateY="20.0" />
+            </graphic>
+            <tooltip>
+               <Tooltip text="Selecting this will include any other file formats mentioned in the textbox" />
+            </tooltip>
+         </CheckBox>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="behPane" layoutX="350.0" layoutY="69.0" prefHeight="743.0" prefWidth="1043.0" visible="false">
+      <children>
+         <Text layoutX="35.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Behaviour">
+            <font>
+               <Font name="System Bold" size="34.0" />
+            </font>
+         </Text>
+         <Text fill="#c6c6c6" layoutX="35.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Additional behaviour for settings for wGet" wrappingWidth="905.173828125">
+            <font>
+               <Font size="26.0" />
+            </font>
+         </Text>
+         <CheckBox layoutX="35.0" layoutY="214.0" mnemonicParsing="false" text="Act Like A Browser">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Whilst downloading, wGet will act like a browser with any interaction with the website" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox layoutX="35.0" layoutY="314.0" mnemonicParsing="false" text="Ignore robots.txt">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Whilst downloading, wGet will ignore robots.txt files" />
+            </tooltip>
+         </CheckBox>
+         <Text layoutX="35.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Additional Parameters: ">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Text>
+         <TextField layoutX="250.0" layoutY="408.0" promptText="Parameters">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Input here any additional settings for wGet to run while downloading the website" />
+            </tooltip>
+         </TextField>
+         <Text layoutX="555.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Retries: ">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Text>
+         <TextField layoutX="640.0" layoutY="408.0" prefHeight="39.0" prefWidth="62.0" promptText="10">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Input here how many retries wGet will do before ending execution" />
+            </tooltip>
+         </TextField>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="runPane" layoutX="350.0" layoutY="69.0" prefHeight="743.0" prefWidth="1043.0" visible="false">
+      <children>
+         <Text layoutX="35.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Running &amp; Logging">
+            <font>
+               <Font name="System Bold" size="34.0" />
+            </font>
+         </Text>
+         <Text fill="#c6c6c6" layoutX="35.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings while wGet is running" wrappingWidth="905.173828125">
+            <font>
+               <Font size="26.0" />
+            </font>
+         </Text>
+         <CheckBox layoutX="35.0" layoutY="214.0" mnemonicParsing="false" text="Go to background (-b)">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="wGet will go to background. If no output file is specified via the logfile, output will be redirected to wget-log" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox layoutX="35.0" layoutY="314.0" mnemonicParsing="false" selected="true" text="All info (-v)">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Turns on verbose output with all available data" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox layoutX="35.0" layoutY="414.0" mnemonicParsing="false" text="Append to logfile (-a)">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="If a log file already exits then it will be appended to with new logs. If doesn't exist then it will create a new logfile" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox layoutX="335.0" layoutY="214.0" mnemonicParsing="false" text="No info (-q)">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Turns off any wGet output" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox layoutX="335.0" layoutY="314.0" mnemonicParsing="false" text="Some info (-nv)">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Basic information gets outputted only" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox layoutX="335.0" layoutY="414.0" mnemonicParsing="false" text="Overwrite logfile (-o)">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="If a log file already exits then it will be overwritten" />
+            </tooltip>
+         </CheckBox>
+         <Text layoutX="635.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logfile:">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Text>
+         <TextArea layoutX="716.0" layoutY="406.0" prefHeight="56.0" prefWidth="179.0" promptText="Filename.log">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Input here the log file name for when wGet starts downloading and logging" />
+            </tooltip>
+         </TextArea>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="retPane" layoutX="350.0" layoutY="69.0" prefHeight="743.0" prefWidth="1043.0" visible="false">
+      <children>
+         <Text layoutX="35.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Retrieval Options">
+            <font>
+               <Font name="System Bold" size="34.0" />
+            </font>
+         </Text>
+         <Text fill="#c6c6c6" layoutX="35.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Options when wGet retrieves URL" wrappingWidth="905.173828125">
+            <font>
+               <Font size="26.0" />
+            </font>
+         </Text>
+         <CheckBox layoutX="35.0" layoutY="214.0" mnemonicParsing="false" text="Only go deeper (-np)">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Select this option to  not ascend to parent directory when retrieving recursively" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox layoutX="35.0" layoutY="314.0" mnemonicParsing="false" text="Continue file download (-c)">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Select this  option so that wGet will continue getting partially downloaded files" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox layoutX="35.0" layoutY="414.0" mnemonicParsing="false" text="Force directories (-x)">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Select this option to create a hierarchy of directories. This option is the opposite of -nd" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox layoutX="335.0" layoutY="214.0" mnemonicParsing="false" text="No clobber (-nc)">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Select this option to stop wGet from downloading newer copies of the same file" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox layoutX="335.0" layoutY="314.0" mnemonicParsing="false" text="Add HTML suffix (-E)">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Selecting this option adds '.HTML' to all downloaded files to increase compatibility" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox layoutX="335.0" layoutY="398.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="204.0" text="Download with inline objects (-p)" wrapText="true">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Select this optionto make wGet download all files required to properly display a given HTML page" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox layoutX="635.0" layoutY="214.0" mnemonicParsing="false" text="Timestamping (-N)">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Select this option so that wGet downloads only new files from the website" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox layoutX="635.0" layoutY="314.0" mnemonicParsing="false" text="No directories (-nd)">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Select this option to make wGet download everything into the currently selected directory with no extra sub-directories" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox layoutX="635.0" layoutY="414.0" mnemonicParsing="false" text="Convert links (-k)">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Select this option to convert links in files to make them suitable for local viewing" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox layoutX="35.0" layoutY="514.0" mnemonicParsing="false" text="Mirror site (-m)">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Select this option to allow wGet to keep a mirror of a page or FTP subdirectories when downloading" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox layoutX="335.0" layoutY="514.0" mnemonicParsing="false" text="Clear server cache">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Select this option to clear cache of server" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox layoutX="635.0" layoutY="514.0" mnemonicParsing="false" text="Check for files (--spider)">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Select this option to make wGet behave as a spider which means it will not download the pages, and just check they are there" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox layoutX="35.0" layoutY="598.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="168.0" text="Recursive (-r) with Depth (-l)" wrapText="true">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Retrieves website recursively with depth of amount of subdirectories to traverse into" />
+            </tooltip>
+         </CheckBox>
+         <TextField layoutX="208.0" layoutY="608.0" prefHeight="39.0" prefWidth="47.0" promptText="5" text="5">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Input depth amount of recursive traversal. Default maximum is 5" />
+            </tooltip>
+         </TextField>
+         <CheckBox layoutX="335.0" layoutY="614.0" mnemonicParsing="false">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Select this option to allow for custom directory saving or else it will save in default directory" />
+            </tooltip>
+         </CheckBox>
+         <TextField fx:id="directoryPath" layoutX="376.0" layoutY="608.0" prefHeight="39.0" prefWidth="177.0" promptText="Directory Path">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Input here file location where wGet will download the files into" />
+            </tooltip>
+         </TextField>
+         <Text layoutX="635.0" layoutY="632.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quota (-Q):">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Text>
+         <TextField layoutX="741.0" layoutY="606.0" prefHeight="39.0" prefWidth="47.0" promptText="0">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <tooltip>
+               <Tooltip text="Input here the download quota for automatic retrievals" />
+            </tooltip>
+         </TextField>
+         <Text layoutX="794.0" layoutY="632.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kb">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Text>
+         <ImageView fx:id="saveIcon" fitHeight="30.0" fitWidth="30.0" layoutX="560.0" layoutY="613.0" onMouseClicked="#handleSaveIcon" pickOnBounds="true" preserveRatio="true" styleClass="saveIcon">
+            <image>
+               <Image url="@../../Images/SaveIcon.png" />
+            </image>
+         </ImageView>
+      </children>
+   </AnchorPane>
+</AnchorPane>
